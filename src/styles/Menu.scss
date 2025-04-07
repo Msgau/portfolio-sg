@@ -1,0 +1,162 @@
+
+.nav-bar {
+    background-color: #181818;
+    width: 70px;
+    min-width: 70px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 9999;
+    ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        a {
+            font-size: 17px;
+            color:#4d4d4e;
+            &:hover {
+            color: #FF00FF;
+            }
+        }
+    }
+    .logo {
+        padding: 8px 0;
+        img {
+            display: block;
+            margin: 8px auto 3px auto;
+            width: 30px;
+            height: auto;
+            background-color: white;
+            border-radius: 5px;
+            &:hover {
+                background-color: #FF00FF;
+            }
+        }
+        
+        h2 {
+            font-size: 11px;
+            text-align: center;
+            margin: 0;
+            color: white;
+            font-weight: normal;
+        }
+    }
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 30vh;
+    a {
+        font-size: 22px;
+        color: #4d4d4e;
+        text-decoration: none;
+        position: relative;
+        i {
+            transition: none;
+        }
+        &:hover {
+            color: #FF00FF;
+
+            svg {
+                opacity: 0;
+            }
+            &:after {
+                opacity: 1;
+            }
+        }
+        &:after {
+            content: '';
+            font-size: 9px;
+            letter-spacing: 2px;
+            position: absolute;
+            bottom:5px;
+            display: block;
+            width: 100%;
+            opacity: 0;
+            transition: all 0.3s ease-out;
+        }
+        &:first-child {
+            &::after {
+                content: 'ACCUEIL';
+                right: 12px;
+            }
+        }
+        &.about-link::after {
+            content: 'PROFIL';
+            right: 10px;
+        }
+        &.contact-link::after {
+            content: 'CONTACT';
+            right: 15px;
+        }
+        &.works-link::after {
+            content: 'TRAVAUX';
+            right: 15px;
+        }
+    }
+    
+}
+@media all and (max-width: 1024px) {
+    .nav-bar {
+        width: 100%;
+        height: 50px;
+        position: fixed;
+        bottom: 0;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        
+        .logo {
+            img {
+                margin: 0 0 5px 10px;
+            }
+            h2 {
+                display: none;
+            }
+        }
+        ul {
+            margin: auto;
+            flex-direction: row;
+            li {
+                width: 30px;
+            }
+        }
+        nav {
+            flex-direction: row;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            a {
+                font-size: 20px;
+                width: 25%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+            }
+            :first-child::after, .works-link::after, .contact-link::after, .about-link::after {
+                content: '';
+        }
+            i {
+                height: 40px;
+            }
+            
+        }
+    }
+}
+        
+@media all and (max-width: 430px) {
+    .nav-bar {
+        .logo, ul {
+            display: none;
+        }
+    }
+}
+        

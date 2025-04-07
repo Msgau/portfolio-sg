@@ -1,0 +1,130 @@
+.presentationPage {
+    display: flex;
+    position: relative;
+}
+
+.presentationContainer, .stage-cube-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 90%;
+    margin: auto 10px;
+}
+.presentationContainer {
+    width: 45%;
+    text-align: justify;
+    a {
+      text-decoration: underline;
+    }
+    a:hover {
+      color: white;
+      text-decoration: none;
+  }
+  strong, h2, a {
+    color: #FF00FF;
+    font-weight: 400;
+  }
+  p {
+    margin: 15px;
+  }
+}
+.stage-cube-cont {
+  width: 45%;
+  height: 100%;
+  position: absolute;
+  right: 10%;
+  bottom: (10%);
+  overflow: hidden;
+}
+
+@media all and (max-width: 430px) {
+    .presentationPage {
+        display: block;
+    }
+}
+  
+  .cubespinner {
+    animation-name: spincube;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 12s;
+    transform-style: preserve-3d; // Donne l'effet 3d d'un cube
+    transform-origin: 100px 100px 0;
+    margin: auto;
+  
+    div {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border: 1px solid #ccc;
+      background: rgba(255, 255, 255, 0.4);
+      text-align: center;
+      font-size: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 20px 0px lightyellow;
+    }
+  
+    .face1 {
+      transform: translateZ(100px);
+      color: #dd0031;
+    }
+    .face2 {
+      transform: rotateY(90deg) translateZ(100px);
+      color: #f06529;
+    }
+    .face3 {
+      transform: rotateY(90deg) rotateX(90deg) translateZ(100px);
+      color: #28a4d9;
+    }
+    .face4 {
+      transform: rotateY(180deg) rotateZ(90deg) translateZ(100px);
+      color: #5ed4f4;
+    }
+    .face5 {
+      transform: rotateY(-90deg) rotateZ(90deg) translateZ(100px);
+      color: #efd81d;
+    }
+    .face6 {
+      transform: rotateX(-90deg) translateZ(100px);
+      color: #ec4d28;
+    }
+  }
+  
+  @keyframes spincube {
+    from,
+    to {
+      transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    16% {
+      transform: rotateY(-90deg) rotateZ(90deg);
+    }
+    33% {
+      transform: rotateY(-90deg) rotateX(90deg);
+    }
+    50% {
+      transform: rotateY(-180deg) rotateZ(90deg);
+    }
+    66% {
+      transform: rotateY(-270deg) rotateX(90deg);
+    }
+    83% {
+      transform: rotateX(90deg);
+    }
+  }
+
+  @media all and (max-width: 1024px) {
+    .stage-cube-cont {
+        display: none;
+    }
+    .presentationContainer {
+        width: 80%;
+        text-align: center;
+        margin: auto;
+    }
+    .presentationPage {
+      height: calc(100% - 50px);
+      margin: 0 0 50px 0;
+    }
+}

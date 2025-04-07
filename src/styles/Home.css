@@ -1,0 +1,100 @@
+.home {
+    position: relative;
+    height: 100vh;
+    display: flex;
+}
+
+.backgroundImage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: url('../assets/images/homeBackground.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    filter: brightness(0.3);
+    z-index: -1;
+}
+
+.home .backgroundImage {
+    filter: brightness(0.9);
+}
+
+.homeContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.homeContainerText {
+    margin: 25vh 20px 0 20px;
+}
+
+.ilADitBonjour,
+.homeContainerDiv {
+    font-size: 25px;
+    font-weight: 200;
+    margin-top: 5px;
+}
+
+.centerImage {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+@media all and (max-width: 1030px) {
+
+    .ilADitBonjour,
+    .homeContainerDiv {
+        font-size: 20px;
+    }
+    .home h1 {
+        font-size: 2.5em;
+    }
+}
+@media all and (max-width: 830px) {
+
+    .ilADitBonjour,
+    .homeContainerDiv {
+        font-size: 18px;
+    }
+    .home h1 {
+        font-size: 2em;
+    }
+    .homeContainerText {
+        margin-top: 20vh;
+    }
+}
+
+@media all and (max-width: 680px) {
+    .home h1 {
+        font-size: 2.3em;
+    }
+    .homeContainerText {
+        margin: 20vh 10px 0 10px;
+    }
+}
+@media all and (max-width: 530px) {
+    .home h1 {
+        font-size: 1.8em;
+    }
+}
+@media all and (max-width: 430px) {
+    .home h1 {
+        font-size: 1.6em;
+    }
+    .ilADitBonjour,
+    .homeContainerDiv {
+        font-size: 16px;
+    }
+    .home {
+        flex-direction: column-reverse;
+    }
+}
+

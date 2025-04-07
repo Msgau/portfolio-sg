@@ -1,0 +1,80 @@
+.contactPage {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.contact form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 60%;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: center;
+    width: 100%;
+}
+.contact label {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+
+.nameEmail {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.nameEmail label {
+    width: 48%;
+    display: flex;
+    justify-content: space-between;
+}
+.contact__name, .contact__email {
+    height: 50px;
+    width: 100%;
+}
+
+.contact textarea, .contact input[type="text"], .contact input[type="email"] {
+    background-color: #4d4d4e;
+    border: 0;
+    border-radius: 3px;
+    padding-left: 10px;
+    font-size: 24px;
+}
+
+.contact textarea {
+    height: 25vh;
+    margin-bottom: 15px;
+}
+
+.sendButton {
+    width: 120px;
+    margin: auto;
+    height: 35px;
+    font-size: 18px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    border-radius: 3px;
+}
+
+@media all and (max-width: 430px) {
+    .nameEmail {
+        flex-direction: column;
+    }
+    .nameEmail label {
+        width: 100%;
+    }
+    .contact textarea, .contact input[type="text"], .contact input[type="email"] {
+        font-size: 12px;
+
+    }
+    .contact__name, .contact__email {
+        height: 40px;
+    }
+}
