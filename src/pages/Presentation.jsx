@@ -36,18 +36,18 @@ export default function Presentation() {
       <div className="presentationContainer">
         <h2>Présentation</h2>
         <p>
-          Actuellement <strong>développeur web junior</strong> passionné par les
+          <strong>Développeur web</strong> chez Dignamik depuis 1 an, passionné par les
           nouvelles technologies, je suis animé par une soif d'apprendre et de
           relever de nouveaux défis. Ancien professeur, j'ai acquis des
           compétences pédagogiques qui me permettent de transmettre efficacement
           mes connaissances techniques de manière claire et concise.
         </p>
         <p>
-          Je me suis formé en suivant la formation développeur web proposée par <a href="https://openclassrooms.com/fr/paths/717-developpeur-web" rel="noopener noreferrer" target="_blank">Openclassrooms</a>.
-          Les connaissances avancées que j'y ai acquises en développement front-end (
+          A travers mon expérience professionnelle et ma formation de développeur web chez <a href="https://openclassrooms.com/fr/paths/717-developpeur-web" rel="noopener noreferrer" target="_blank">Openclassrooms</a>,
+          j'ai acquis des connaissances avancées en développement front-end (
           <strong>JavaScript</strong>, <strong>HTML5</strong>, <strong>React</strong>,{" "}
           <strong>CSS3</strong>) et back-end (<strong>Node.js</strong>,{" "}
-          <strong>express</strong>, <strong>mongoDB</strong>) me permettent de
+          <strong>express</strong>, <strong>mongoDB</strong>, <strong>postgreSQL</strong>, <strong>prisma Studio</strong>) me permettant de
           créer des expériences web innovantes et fluides.{" "}
         </p>
         <p>
