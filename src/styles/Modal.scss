@@ -122,7 +122,7 @@
   
 
   @media screen and (min-width: 2000px) {
-    .big-screen {
+    .hidden {
       display: none;
     }
   }
@@ -185,7 +185,7 @@
             }
         }
     }
-    .big-screen {
+    .hidden {
         display: none;
       }
 }

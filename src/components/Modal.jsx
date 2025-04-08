@@ -140,7 +140,7 @@ const Modal = ({
                     href={imageSrc3}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="img-link big-screen"
+                    className="img-link hidden"
                   >
                     <img
                       src={imageSrc3}
