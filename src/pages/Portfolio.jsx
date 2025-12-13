@@ -12,7 +12,7 @@ import Modal from "../components/Modal";
 import projectData from "../data/projectsData.json";
 import gaec from "../assets/images/gaec.png";
 import adp from "../assets/images/adp.png";
-import grangier from "../assets/images/grangier.png";
+import ph from "../assets/images/ph.png";
 
 export default function Portfolio() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -49,7 +49,7 @@ export default function Portfolio() {
     { img1: CineCrew, img2: CineCrew2 },
     { img1: MVG, img2: MVG2 },
     { img1: Nina, img2: Nina2 },
-    { img1: gaec, img2: adp, img3: grangier },
+    { img1: gaec, img2: adp, img3: ph },
   ];
 
   return (

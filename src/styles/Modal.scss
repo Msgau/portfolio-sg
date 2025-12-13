@@ -105,7 +105,7 @@
 .liens-sites {
     list-style: none;
     padding-left: 0;
-    display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
     li {
         margin: 0.5rem 0;
@@ -188,4 +188,10 @@
     .hidden {
         display: none;
       }
+      .liens-sites {
+        li {
+            text-align: center;
+            width: 50%;
+        }
+}
 }
