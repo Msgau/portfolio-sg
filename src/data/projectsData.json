@@ -3,7 +3,7 @@
 		"id": "1",
 		"title": "Ciné Crew (WOP)",
 		"mission": "Projet personnel initié en parallèle de ma formation. Il est encore en cours de développement. Mon objectif est de créer entièrement un site de notation de films incluant des fonctions sociales. Actuellement, j'ai intégré un moteur de recherche ainsi qu'une interface d'affichage pour les films. Je suis en train de me former sur le langage SQL pour développer le back-end du site, nécessaire à l'intégration des fonctions sociales.",
-        "technologies": [
+		"technologies": [
 			"REACT",
 			"CSS",
 			"SQL",
@@ -12,22 +12,22 @@
 		"github": "https://github.com/Msgau/site_cine",
 		"link": "https://msgau.github.io/site_cine/"
 	},
-    {
+	{
 		"id": "2",
 		"title": "Frontend du site KASA",
 		"mission": "Créer l'interface visuelle d'un site de réservation de logements chez l'habitant avec React. C'est avec ce projet que je me suis formé aux bases du framework React. J'ai utilisé des composants pour générer la page d'accueil qui présente la liste des logements, puis pour créer une page présentant la fiche d'un logement. Réalisé dans le cadre de ma formation.",
-        "technologies": [
+		"technologies": [
 			"REACT",
 			"CSS"
 		],
 		"github": "https://github.com/Msgau/kasa-react",
 		"hidden": true
 	},
-    {
+	{
 		"id": "3",
 		"title": "Mon Vieux Grimoire (back-end)",
 		"mission": "Construire le back-end du site Mon Vieux Grimoire, un site de notation de livres. J'ai utilisé express et node.js pour créer la structure du back-end du site, en m'appuyant sur la base de données noSQL mongoDB. J'ai pu créer des routes sécurisées pour que les utilisateurs puissent créer un compte, se connecter, ajouter un livre, le noter, le modifier ou le supprimer, et enfin pour afficher les objets créés par ceux-ci. Réalisé dans le cadre de ma formation.",
-        "technologies": [
+		"technologies": [
 			"NodeJs",
 			"Express",
 			"MongoDB",
@@ -35,11 +35,11 @@
 		],
 		"github": "https://github.com/Msgau/Mon-vieux-Grimoire-V2-backend"
 	},
-    {
+	{
 		"id": "4",
 		"title": "Nina Carducci (optimisation, débug)",
 		"mission": "Je suis parti d'un site déjà conçu par un autre développeur, mais présentant des problèmes : performances, référencement, ainsi que des bugs sur ses fonctionnalités. Par exemple, la fonction de tri de la galerie. J'ai entrepris d'améliorer le référencement et les performances du site, de débugger les outils qui ne fonctionnent pas, de supprimer le code inutile des bibliothèques, ou bien de le remplacer par du code JavaScript. Réalisé dans le cadre de ma formation.",
-        "technologies": [
+		"technologies": [
 			"HTML",
 			"CSS",
 			"JavaScript",
@@ -52,47 +52,141 @@
 		"id": "5",
 		"title": "Frontend de plus de 30 sites vitrines",
 		"mission": "Création de sites vitrines pour des commerces locaux. Voici quelques exemples de réalisations",
-        "technologies": [
+		"technologies": [
 			"HTML",
 			"CSS",
 			"JavaScript",
 			"UGO"
 		],
 		"links": [
-  { "nom": "L'endroit manosquin", "url": "https://lendroitmanosquin.fr/" },
-  { "nom": "Orient'action", "url": "https://orientaction04.fr/" },
-  { "nom": "Coeur de cigale", "url": "https://bougieartisanaleprovence.fr/" },
-  { "nom": "Adp fermetures", "url": "https://adpfermetures.net/" },
-  { "nom": "Cap clim et énergies", "url": "https://cap-clim.com/" },
-  { "nom": "MCMS", "url": "https://mcmedical.fr/" },
-  { "nom": "Profil Chausseur", "url": "https://profilchausseur-manosque.com/" },
-  { "nom": "Aude de Maussane", "url": "https://audedemaussane.fr/" },
-  { "nom": "Le moulin de Gréoux", "url": "https://lemoulindegreoux.fr/" },
-  { "nom": "Camping Moulin de Thoard", "url": "https://campingdigne.fr/" },
-  { "nom": "Maroquinerie Candra", "url": "https://maroquinerieprovence.fr/" },
-  { "nom": "Créa'tifs", "url": "https://creatifsvalensole.com/" },
-  { "nom": "Les couteaux du Sasse", "url": "https://www.lescouteauxdusasse.fr/" },
-  { "nom": "Chez Lizon", "url": "https://chezlizon.fr/" },
-  { "nom": "L'étal des paysans", "url": "https://www.letaldespaysans.fr/" },
-  { "nom": "Menuiserie Rongeon", "url": "https://menuiserierongeon.fr/" },
-  { "nom": "Le buffet de Mimi", "url": "https://lebuffetdemimi.fr/" },
-  { "nom": "L'ilot savon", "url": "https://lilotsavon.fr/" },
-  { "nom": "Le chalet", "url": "https://lechalet04.fr/" },
-  { "nom": "Aux plaisirs des mets", "url": "https://auxplaisirsdesmets.fr/" },
-  { "nom": "Grangier photo", "url": "https://www.grangierphoto.fr/" },
-  { "nom": "Olivier & soap", "url": "https://www.olivier-and-soap.fr/" },
-  { "nom": "Un brin cosy", "url": "https://www.unbrincosy.fr/" },
-  { "nom": "Les colporteurs", "url": "https://www.lescolporteurs.fr/" },
-  { "nom": "Créations gourmandes", "url": "https://www.patisserie-creations-gourmandes.com/" },
-  { "nom": "Miroiterie dignoise", "url": "https://miroiterie-alpes.fr/" },
-  { "nom": "L'orchidée fleuriste", "url": "https://lorchideefleuriste.fr/" },
-  { "nom": "La petite monture", "url": "https://lapetitemonture.fr/" },
-  { "nom": "Carré bleu Forcalquier", "url": "https://carrebleu-forcalquier.fr/" },
-  { "nom": "Gaec du riou", "url": "https://www.lafermeduriou.com/" },
-  { "nom": "Trésors perdus", "url": "https://tresorsperdus-shop.fr/" },
-  { "nom": "Bouton rose", "url": "https://www.boutonrosestyliste.fr/" },
-  
-  { "nom": "Cg optic'", "url": null }
-]
+			{
+				"nom": "Maison de Marius",
+				"url": "https://maison-de-marius.fr/"
+			},
+			{
+				"nom": "PH+ Propreté",
+				"url": "https://phplusproprete.com/"
+			},
+			{
+				"nom": "Jasfood",
+				"url": "https://jasfood.fr/"
+			},
+			{
+				"nom": "L'endroit chez Mimi",
+				"url": "https://lendroitchezmimi.fr/"
+			},
+			{
+				"nom": "Orient'action",
+				"url": "https://orientaction04.fr/"
+			},
+			{
+				"nom": "Coeur de cigale",
+				"url": "https://bougieartisanaleprovence.fr/"
+			},
+			{
+				"nom": "Adp fermetures",
+				"url": "https://adpfermetures.net/"
+			},
+			{
+				"nom": "Cap clim et énergies",
+				"url": "https://cap-clim.com/"
+			},
+			{
+				"nom": "MCMS",
+				"url": "https://mcmedical.fr/"
+			},
+			{
+				"nom": "Ailhaud",
+				"url": "https://entreprise-ailhaudmichel.fr/"
+			},
+			{
+				"nom": "Profil Chausseur",
+				"url": "https://profilchausseur-manosque.com/"
+			},
+			{
+				"nom": "Aude de Maussane",
+				"url": "https://audedemaussane.fr/"
+			},
+			{
+				"nom": "Aux 4 saisons",
+				"url": "https://aux4saisons-barcelonnette.fr/"
+			},
+			{
+				"nom": "Le moulin de Gréoux",
+				"url": "https://lemoulindegreoux.fr/"
+			},
+			{
+				"nom": "Camping Moulin de Thoard",
+				"url": "https://campingdigne.fr/"
+			},
+			{
+				"nom": "Créa'tifs",
+				"url": "https://creatifsvalensole.com/"
+			},
+			{
+				"nom": "Les couteaux du Sasse",
+				"url": "https://www.lescouteauxdusasse.fr/"
+			},
+			{
+				"nom": "Chez Lizon",
+				"url": "https://chezlizon.fr/"
+			},
+			{
+				"nom": "L'étal des paysans",
+				"url": "https://www.letaldespaysans.fr/"
+			},
+			{
+				"nom": "Menuiserie Rongeon",
+				"url": "https://menuiserierongeon.fr/"
+			},
+			{
+				"nom": "Le buffet de Mimi",
+				"url": "https://lebuffetdemimi.fr/"
+			},
+			{
+				"nom": "L'ilot savon",
+				"url": "https://lilotsavon.fr/"
+			},
+			{
+				"nom": "Le chalet",
+				"url": "https://lechalet04.fr/"
+			},
+			{
+				"nom": "Olivier & soap",
+				"url": "https://www.olivier-and-soap.fr/"
+			},
+			{
+				"nom": "Un brin cosy",
+				"url": "https://www.unbrincosy.fr/"
+			},
+			{
+				"nom": "Les colporteurs",
+				"url": "https://www.lescolporteurs.fr/"
+			},
+			{
+				"nom": "Créations gourmandes",
+				"url": "https://www.patisserie-creations-gourmandes.com/"
+			},
+			{
+				"nom": "L'orchidée fleuriste",
+				"url": "https://lorchideefleuriste.fr/"
+			},
+			{
+				"nom": "Gaec du riou",
+				"url": "https://www.lafermeduriou.com/"
+			},
+			{
+				"nom": "Trésors perdus",
+				"url": "https://tresorsperdus-shop.fr/"
+			},
+			{
+				"nom": "Bouton rose",
+				"url": "https://www.boutonrosestyliste.fr/"
+			},
+			{
+				"nom": "Cg optic'",
+				"url": null
+			}
+		]
 	}
 ]
