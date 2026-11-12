@@ -15,6 +15,10 @@ import jwtLogo from "../assets/logos/logoJWT.png";
 import logoNode from "../assets/logos/logoNodeJs.png";
 import tmdbLogo from "../assets/logos/logoTMDB.png";
 import sqlLogo from "../assets/logos/logoSQL.png";
+import nextLogo from "../assets/logos/logoNextJS.webp";
+import tsLogo from "../assets/logos/logoTypeScript.webp";
+import tailwindLogo from "../assets/logos/logoTailwind.svg";
+import supabaseLogo from "../assets/logos/logoSupabase.webp";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import PropTypes from "prop-types";
 
@@ -96,6 +100,10 @@ const Modal = ({
     API_TMDB: tmdbLogo,
     SQL: sqlLogo,
     UGO: ugoLogo,
+    NEXTJS: nextLogo,
+    TYPESCRIPT: tsLogo,
+    TAILWIND: tailwindLogo,
+    SUPABASE: supabaseLogo,
   };
 
   return (

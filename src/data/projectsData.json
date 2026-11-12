@@ -1,16 +1,18 @@
 [
 	{
 		"id": "1",
-		"title": "Ciné Crew (WOP)",
-		"mission": "Projet personnel initié en parallèle de ma formation. Il est encore en cours de développement. Mon objectif est de créer entièrement un site de notation de films incluant des fonctions sociales. Actuellement, j'ai intégré un moteur de recherche ainsi qu'une interface d'affichage pour les films. Je suis en train de me former sur le langage SQL pour développer le back-end du site, nécessaire à l'intégration des fonctions sociales.",
+		"title": "Screenblocks",
+		"mission": "Projet personnel : un site communautaire autour du cinéma et des séries, que je conçois et développe seul. Le principe repose sur les « blocks » : des classements de films ou de séries, personnels ou partagés. Chaque membre établit son propre classement, et le block affiche la moyenne des réponses du groupe. J'ai développé trois types de blocks (liste ouverte, liste verrouillée, watchlist), avec des règles d'admission, des rôles (admin, modérateur, membre) et un système de scellage. Le site intègre aussi l'authentification et l'onboarding, des amis et des groupes, des posts et commentaires, des notifications, et la recherche de films, séries et personnes via l'API TMDB. Côté back-end, j'ai conçu la base PostgreSQL sur Supabase (migrations, politiques de sécurité RLS, fonctions SQL), avec un déploiement sur Vercel.",
 		"technologies": [
+			"NEXTJS",
 			"REACT",
-			"CSS",
+			"TYPESCRIPT",
+			"TAILWIND",
+			"SUPABASE",
 			"SQL",
 			"API_TMDB"
 		],
-		"github": "https://github.com/Msgau/site_cine",
-		"link": "https://msgau.github.io/site_cine/"
+		"link": "https://www.screenblocks.fr/"
 	},
 	{
 		"id": "2",

@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import "../styles/Portfolio.css";
 import Menu from "../components/Menu";
 import { Grid } from "react-loader-spinner";
-import CineCrew from "../assets/images/cineCrew.webp";
-import CineCrew2 from "../assets/images/cineCrew2.webp";
+import Screenblocks from "../assets/images/screenblocks.webp";
+import Screenblocks2 from "../assets/images/screenblocks2.webp";
 import MVG from "../assets/images/monVieuxGrimoire.png";
 import MVG2 from "../assets/images/monVieuxGrimoire2.png";
 import Nina from "../assets/images/NinaCarducci.png";
@@ -46,7 +46,7 @@ export default function Portfolio() {
   };
 
   const images = [
-    { img1: CineCrew, img2: CineCrew2 },
+    { img1: Screenblocks, img2: Screenblocks2 },
     { img1: MVG, img2: MVG2 },
     { img1: Nina, img2: Nina2 },
     { img1: gaec, img2: adp, img3: ph },
