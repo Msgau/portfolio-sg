@@ -1,18 +1,17 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "../styles/Portfolio.css";
 import Menu from "../components/Menu";
-import { Grid } from "react-loader-spinner";
 import Screenblocks from "../assets/images/screenblocks.webp";
 import Screenblocks2 from "../assets/images/screenblocks2.webp";
-import MVG from "../assets/images/monVieuxGrimoire.png";
-import MVG2 from "../assets/images/monVieuxGrimoire2.png";
-import Nina from "../assets/images/NinaCarducci.png";
-import Nina2 from "../assets/images/Nina2.png";
+import MVG from "../assets/images/monVieuxGrimoire.webp";
+import MVG2 from "../assets/images/monVieuxGrimoire2.webp";
+import Nina from "../assets/images/NinaCarducci.webp";
+import Nina2 from "../assets/images/Nina2.webp";
 import Modal from "../components/Modal";
 import projectData from "../data/projectsData.json";
-import gaec from "../assets/images/gaec.png";
-import adp from "../assets/images/adp.png";
-import ph from "../assets/images/ph.png";
+import gaec from "../assets/images/gaec.webp";
+import adp from "../assets/images/adp.webp";
+import ph from "../assets/images/ph.webp";
 
 export default function Portfolio() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -20,16 +19,6 @@ export default function Portfolio() {
   const [selectedImage2, setSelectedImage2] = useState("");
   const [selectedImage3, setSelectedImage3] = useState("");
   const [selectedProjectData, setSelectedProjectData] = useState({});
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    // Simulate the loading process for 2 seconds
-    const loadingTimer = setTimeout(() => setLoading(false), 1000);
-
-    // Clean up the timer when the component unmounts
-    return () => clearTimeout(loadingTimer);
-  }, []);
-
   const openModal = (imageSrc, imageSrc2, imageSrc3, projectData) => {
     setSelectedImage(imageSrc);
     setSelectedImage2(imageSrc2);
@@ -41,6 +30,7 @@ export default function Portfolio() {
   const closeModal = () => {
     setSelectedImage("");
     setSelectedImage2("");
+    setSelectedImage3("");
     setSelectedProjectData({});
     setModalOpen(false);
   };
@@ -56,13 +46,14 @@ export default function Portfolio() {
     <div className="works">
       <Menu />
       <div className="backgroundImage"></div>
-      <div style={loading ? { display: "none" } : { display: "block" }}>
+      <div>
         <div className="portfolio">
           {projectData
           .filter(project => !project.hidden)
           .map((project, index) => (
-            <div
-              key={index}
+            <button
+              type="button"
+              key={project.id}
               className="block"
               onClick={() =>
                 openModal(
@@ -83,7 +74,7 @@ export default function Portfolio() {
                 <h2>{project.title}</h2>
                 <p>voir plus</p>
               </div>
-            </div>
+            </button>
           ))}
         </div>
         <Modal
@@ -97,12 +88,6 @@ export default function Portfolio() {
           imageAlt3="Troisième image du projet" 
           projectData={selectedProjectData}
         />
-      </div>
-      <div
-        className="loader-container"
-        style={loading ? { display: "block" } : { display: "none" }}
-      >
-        <Grid type="Grid" color="#FF00FF" height={100} width={100} />
       </div>
     </div>
   );

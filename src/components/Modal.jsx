@@ -1,6 +1,5 @@
 import "../styles/Modal.scss";
-import { Grid } from "react-loader-spinner";
-import { useState, useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
 import reactLogo from "../assets/logos/logoREACT.png";
@@ -22,6 +21,24 @@ import supabaseLogo from "../assets/logos/logoSupabase.webp";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import PropTypes from "prop-types";
 
+const logoMapping = {
+  REACT: reactLogo,
+  HTML: htmlLogo,
+  CSS: cssLogo,
+  JAVASCRIPT: jsLogo,
+  EXPRESS: exLogo,
+  MONGODB: mongodbLogo,
+  LIGHTHOUSE: lightLogo,
+  JSONWEBTOKEN: jwtLogo,
+  NODEJS: logoNode,
+  API_TMDB: tmdbLogo,
+  SQL: sqlLogo,
+  UGO: ugoLogo,
+  NEXTJS: nextLogo,
+  TYPESCRIPT: tsLogo,
+  TAILWIND: tailwindLogo,
+  SUPABASE: supabaseLogo,
+};
 
 const Modal = ({
   show,
@@ -33,234 +50,151 @@ const Modal = ({
   imageAlt2,
   projectData,
 }) => {
-  const [imagesLoaded, setImagesLoaded] = useState(false);
-  const [showContent, setShowContent] = useState(false);
+  const closeRef = useRef(null);
+  const onCloseRef = useRef(onClose);
+  onCloseRef.current = onClose;
 
-  const handleCloseModal = (e) => {
-    // Vérifie si l'événement provient de la div .modal-overlay (en dehors de la modale)
-    if (
-      e.target.classList.contains("nav-bar") ||
-      e.target.classList.contains("modal-overlay") ||
-      e.target.classList.contains("close-btn")
-    ) {
-      e.stopPropagation();
-      onClose(); // Ferme la modale si l'événement provient de l'extérieur
-    }
+  const handleOverlayClick = (e) => {
+    // Ferme la modale uniquement si le clic provient de l'overlay
+    if (e.target === e.currentTarget) onClose();
   };
 
   useEffect(() => {
-    // Réinitialise l'état showContent chaque fois que la propriété show change
-    setShowContent(false);
-  }, [show]);
-
-  useEffect(() => {
-    // Fonction qui sera exécutée une fois que les deux images sont chargées
-    const handleAllImagesLoaded = () => {
-      setImagesLoaded(true);
-      setTimeout(() => {
-        setShowContent(true);
-      }, 1000);
+    if (!show) return undefined;
+    // Mémorise l'élément qui a ouvert la modale pour lui rendre le focus à la fermeture
+    const previouslyFocused = document.activeElement;
+    closeRef.current?.focus();
+    const onKeyDown = (e) => {
+      if (e.key === "Escape") onCloseRef.current();
     };
-
-    // Crée des objets d'image pour les deux images
-    const img1 = new Image();
-    const img2 = new Image();
-    const img3 = new Image();
-
-    // Définit les gestionnaires onLoad pour chaque image
-    img1.onload = handleAllImagesLoaded;
-    img2.onload = handleAllImagesLoaded;
-    img3.onload = handleAllImagesLoaded;
-
-    // Définit les sources des images
-    img1.src = imageSrc;
-    img2.src = imageSrc2;
-    img3.src = imageSrc3
-
-    // Nettoyage : supprime les gestionnaires onLoad lorsque le composant est démonté
+    document.addEventListener("keydown", onKeyDown);
     return () => {
-      img1.onload = null;
-      img2.onload = null;
-      img3.onload = null;
+      document.removeEventListener("keydown", onKeyDown);
+      previouslyFocused?.focus?.();
     };
-  }, [imageSrc, imageSrc2, imageSrc3]); // Déclenchez l'effet lorsque les sources des images changent
+  }, [show]);
 
   if (!show) return null;
 
-  const logoMapping = {
-    REACT: reactLogo,
-    HTML: htmlLogo,
-    CSS: cssLogo,
-    JAVASCRIPT: jsLogo,
-    EXPRESS: exLogo,
-    MONGODB: mongodbLogo,
-    LIGHTHOUSE: lightLogo,
-    JSONWEBTOKEN: jwtLogo,
-    NODEJS: logoNode,
-    API_TMDB: tmdbLogo,
-    SQL: sqlLogo,
-    UGO: ugoLogo,
-    NEXTJS: nextLogo,
-    TYPESCRIPT: tsLogo,
-    TAILWIND: tailwindLogo,
-    SUPABASE: supabaseLogo,
-  };
-
   return (
-    <div className="modal-overlay" onClick={handleCloseModal}>
-      <div className="modal">
-        <div className="close-btn" onClick={onClose}>
-          <FontAwesomeIcon
-            icon={faX}
-            style={{
-              color: "#FF00FF",
-            }}
-          />
-        </div>
-        {imagesLoaded ? (
-          <>
-            {showContent ? ( // Vérifier s'il est temps d'afficher le contenu
-              <>
-                <div className="modal-div one">
-                  <a
-                    href={imageSrc}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="img-link"
-                  >
-                    <img src={imageSrc} alt={imageAlt} className="modal-img" />
-                  </a>
+    <div className="modal-overlay" onClick={handleOverlayClick}>
+      <div
+        className="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-label={projectData.title}
+      >
+        <button
+          type="button"
+          className="close-btn"
+          onClick={onClose}
+          aria-label="Fermer"
+          ref={closeRef}
+        >
+          <FontAwesomeIcon icon={faX} />
+        </button>
+        <div className="modal-div one">
+          <a
+            href={imageSrc}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="img-link"
+          >
+            <img src={imageSrc} alt={imageAlt} className="modal-img" />
+          </a>
 
-                  <a
-                    href={imageSrc2}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="img-link"
-                  >
-                    <img
-                      src={imageSrc2}
-                      alt={imageAlt2}
-                      className="modal-img"
-                    />
-                  </a>
-                  {imageSrc3 &&
-                  <a
-                    href={imageSrc3}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="img-link hidden"
-                  >
-                    <img
-                      src={imageSrc3}
-                      alt={imageAlt2}
-                      className="modal-img"
-                    />
-                  </a>
-                  }
-                </div>
-                <div className="modal-div two">
-                  <h2>
-                    {projectData.link ? (
+          <a
+            href={imageSrc2}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="img-link"
+          >
+            <img src={imageSrc2} alt={imageAlt2} className="modal-img" />
+          </a>
+          {imageSrc3 && (
+            <a
+              href={imageSrc3}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="img-link hidden"
+            >
+              <img src={imageSrc3} alt={imageAlt2} className="modal-img" />
+            </a>
+          )}
+        </div>
+        <div className="modal-div two">
+          <h2>
+            {projectData.link ? (
+              <a
+                href={projectData.link}
+                style={{ color: "black" }}
+                rel="noopener noreferrer"
+                target="_blank"
+                className="link-ws"
+                title={`${projectData.title} : aller vers le site`}
+              >
+                {projectData.title}{" "}
+              </a>
+            ) : (
+              projectData.title // Afficher le titre du projet s'il n'y a pas de lien
+            )}
+            {projectData.github && (
+              <a
+                href={projectData.github}
+                rel="noopener noreferrer"
+                target="_blank"
+                className="link-gh"
+                aria-label={`${projectData.title} : code source sur GitHub`}
+              >
+                <FontAwesomeIcon icon={faGithub} />
+              </a>
+            )}
+          </h2>
+          <h3>Mission :</h3>
+          <p>{projectData.mission}</p>
+          {projectData.links && projectData.links.length > 0 && (
+            <>
+              <h3>Sites réalisés :</h3>
+              <ul className="liens-sites">
+                {projectData.links.map((site) => (
+                  <li key={site.nom}>
+                    {site.url ? (
                       <a
-                        href={projectData.link}
-                        style={{ color: "black" }}
-                        rel="noopener noreferrer"
+                        href={
+                          site.url.startsWith("http")
+                            ? site.url
+                            : `https://${site.url}`
+                        }
                         target="_blank"
-                        className="link-ws"
-                        title={`${projectData.title} : aller vers le site`}
+                        rel="noopener noreferrer"
                       >
-                        {projectData.title}{" "}
+                        {site.nom}
                       </a>
                     ) : (
-                      projectData.title // Afficher le titre du projet s'il n'y a pas de lien
+                      <span>{site.nom} (site fermé)</span>
                     )}
-                    {projectData.github && (
-                    <a
-                      href={projectData.github}
-                      rel="noopener noreferrer"
-                      target="_blank"
-                      className="link-gh"
-                    >
-                      <FontAwesomeIcon icon={faGithub} />
-                    </a>
-                    )}
-                  </h2>
-                  <h3>Mission :</h3>
-                  <p>{projectData.mission}</p>
-                  {projectData.links &&
-                    projectData.links.length > 0 && (
-                      <>
-                        <h3>Sites réalisés :</h3>
-                        <ul className="liens-sites">
-                          {projectData.links.map((site, index) => (
-                            <li key={index}>
-                              {site.url ? (
-                                <a
-                                  href={
-                                    site.url.startsWith("http")
-                                      ? site.url
-                                      : `https://${site.url}`
-                                  }
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                >
-                                  {site.nom}
-                                </a>
-                              ) : (
-                                <span>{site.nom} (site fermé)</span>
-                              )}
-                            </li>
-                          ))}
-                        </ul>
-                      </>
-                    )}
-                  <h3>Technologies utilisées :</h3>
-                  <ul>
-                    {projectData.technologies.map((tech, index) => (
-                      <li key={index}>
-                        {logoMapping[tech.toUpperCase()] ? (
-                          <img
-                            src={logoMapping[tech.toUpperCase()]}
-                            alt={tech}
-                            title={tech}
-                          /> // Afficher l'icône si disponible
-                        ) : (
-                          tech // Afficher le nom de la technologie s'il n'y a pas d'icône correspondant
-                        )}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </>
-            ) : (
-              <div className="loader-container">
-                <Grid
-                  height="80"
-                  width="80"
-                  color="#FF00FF"
-                  ariaLabel="grid-loading"
-                  radius="12.5"
-                  wrapperStyle={{}}
-                  wrapperClass=""
-                  visible={true}
-                />
-              </div>
-            )}
-          </>
-        ) : (
-          // Afficher le loader pendant le chargement des images
-          <div className="loader-container">
-            <Grid
-              visible={true}
-              color="#FF00FF"
-              height="80"
-              width="80"
-              ariaLabel="blocks-loading"
-              wrapperStyle={{ "background-color": "#FF00FF" }}
-              wrapperClass="blocks-wrapper"
-            />
-          </div>
-        )}
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+          <h3>Technologies utilisées :</h3>
+          <ul>
+            {projectData.technologies.map((tech) => (
+              <li key={tech}>
+                {logoMapping[tech.toUpperCase()] ? (
+                  <img
+                    src={logoMapping[tech.toUpperCase()]}
+                    alt={tech}
+                    title={tech}
+                  /> // Afficher l'icône si disponible
+                ) : (
+                  tech // Afficher le nom de la technologie s'il n'y a pas d'icône correspondant
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );

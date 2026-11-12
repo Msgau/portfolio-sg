@@ -128,3 +128,9 @@
       margin: 0 0 50px 0;
     }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .cubespinner {
+    animation: none !important;
+  }
+}

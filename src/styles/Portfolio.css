@@ -19,6 +19,11 @@
 }
 
 .block {
+    padding: 0;
+    border: 0;
+    background: none;
+    font: inherit;
+    display: block;
     width: 46%;
     height: 43vh;
     margin: 20px auto;
@@ -133,3 +138,11 @@
     
   }
   
+.block:focus-visible {
+    outline: 3px solid #FF00FF;
+    outline-offset: 3px;
+}
+
+.block:focus-visible .text-overlay {
+    opacity: 1;
+}

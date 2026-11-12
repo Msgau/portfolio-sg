@@ -17,22 +17,15 @@
     align-items: center;
     width: 100%;
 }
-.contact label {
-    display: flex;
-    justify-content: space-between;
-    margin: 5px 0;
-}
-
 .nameEmail {
     display: flex;
     justify-content: space-between;
     width: 100%;
 }
 
-.nameEmail label {
+.nameEmail .field {
     width: 48%;
-    display: flex;
-    justify-content: space-between;
+    margin: 5px 0;
 }
 .contact__name, .contact__email {
     height: 50px;
@@ -67,7 +60,7 @@
     .nameEmail {
         flex-direction: column;
     }
-    .nameEmail label {
+    .nameEmail .field {
         width: 100%;
     }
     .contact textarea, .contact input[type="text"], .contact input[type="email"] {
@@ -77,4 +70,31 @@
     .contact__name, .contact__email {
         height: 40px;
     }
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.sendButton {
+    cursor: pointer;
+}
+
+.sendButton:disabled {
+    opacity: 0.6;
+    cursor: default;
+}
+
+.formStatus {
+    min-height: 1.5em;
+    margin-top: 10px;
+    text-align: center;
 }

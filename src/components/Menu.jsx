@@ -29,7 +29,7 @@ export default function Menu() {
             icon={faHome}
             style={{
               color:
-              location.pathname === "/" || location.pathname === "/" ? "#FF00FF" : "#4d4d4e",
+              location.pathname === "/" || location.pathname === "/" ? "#FF00FF" : "#9a9a9c",
             }}
           />
         </NavLink>
@@ -46,7 +46,7 @@ export default function Menu() {
               color:
                 location.pathname === "/presentation"
                   ? "#FF00FF"
-                  : "#4d4d4e",
+                  : "#9a9a9c",
             }}
           />
         </NavLink>
@@ -63,7 +63,7 @@ export default function Menu() {
               color:
                 location.pathname === "/works"
                   ? "#FF00FF"
-                  : "#4d4d4e",
+                  : "#9a9a9c",
             }}
           />
         </NavLink>
@@ -81,7 +81,7 @@ export default function Menu() {
               color:
                 location.pathname === "/contact"
                   ? "#FF00FF"
-                  : "#4d4d4e",
+                  : "#9a9a9c",
             }}
           />
         </NavLink>

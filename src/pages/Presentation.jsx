@@ -1,8 +1,6 @@
-import { useState, useEffect } from "react";
 import Menu from "../components/Menu";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCode } from "@fortawesome/free-solid-svg-icons";
-import { Grid } from "react-loader-spinner";
 import CV from "../assets/cv_gau_sebastien_dev_web.pdf";
 import {
   faCss3,
@@ -14,24 +12,10 @@ import {
 import "../styles/Presentation.scss";
 
 export default function Presentation() {
-  // On définit l'état de contendLoaded à false
-  const [contentLoaded, setContentLoaded] = useState(false);
-
-  // ON ajoute un délai de 250 ms
-  useEffect(() => {
-    const loadingTimer = setTimeout(() => {
-      setContentLoaded(true);
-    }, 250);
-
-    // Arrêter le timer quand la page est fermée
-    return () => clearTimeout(loadingTimer);
-  }, []);
-
   return (
     <div className="presentationPage">
         <div className="backgroundImage"></div>
-      {contentLoaded ? ( // Afficher le contenu uniquement quand il est chargé
-        <>
+      <>
       <Menu />
       <div className="presentationContainer">
         <h2>Présentation</h2>
@@ -85,11 +69,6 @@ export default function Presentation() {
         </div>
       </div>
       </>
-      ) : (
-        <div className="loader-container">
-          <Grid type="Grid" color="#FF00FF" height={100} width={100} />
-        </div>
-      )}
     </div>
   );
 }
