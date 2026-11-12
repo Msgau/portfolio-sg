@@ -73,7 +73,7 @@
 			},
 			{
 				"nom": "L'endroit chez Mimi",
-				"url": "https://lendroitchezmimi.fr/"
+				"url": null
 			},
 			{
 				"nom": "Orient'action",
@@ -81,7 +81,7 @@
 			},
 			{
 				"nom": "Coeur de cigale",
-				"url": "https://bougieartisanaleprovence.fr/"
+				"url": null
 			},
 			{
 				"nom": "Adp fermetures",
@@ -89,7 +89,7 @@
 			},
 			{
 				"nom": "Cap clim et énergies",
-				"url": "https://cap-clim.com/"
+				"url": null
 			},
 			{
 				"nom": "MCMS",
@@ -97,7 +97,7 @@
 			},
 			{
 				"nom": "Ailhaud",
-				"url": "https://entreprise-ailhaudmichel.fr/"
+				"url": null
 			},
 			{
 				"nom": "Profil Chausseur",
@@ -117,7 +117,7 @@
 			},
 			{
 				"nom": "Camping Thoard",
-				"url": "https://campingdigne.fr/"
+				"url": null
 			},
 			{
 				"nom": "Créa'tifs",
@@ -129,7 +129,7 @@
 			},
 			{
 				"nom": "Chez Lizon",
-				"url": "https://chezlizon.fr/"
+				"url": null
 			},
 			{
 				"nom": "L'étal des paysans",
@@ -141,11 +141,11 @@
 			},
 			{
 				"nom": "Le buffet de Mimi",
-				"url": "https://lebuffetdemimi.fr/"
+				"url": null
 			},
 			{
 				"nom": "L'ilot savon",
-				"url": "https://lilotsavon.fr/"
+				"url": null
 			},
 			{
 				"nom": "Le chalet",
@@ -177,11 +177,11 @@
 			},
 			{
 				"nom": "Trésors perdus",
-				"url": "https://tresorsperdus-shop.fr/"
+				"url": null
 			},
 			{
 				"nom": "Bouton rose",
-				"url": "https://www.boutonrosestyliste.fr/"
+				"url": null
 			},
 			{
 				"nom": "Cg optic'",

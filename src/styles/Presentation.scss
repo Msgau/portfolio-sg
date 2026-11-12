@@ -122,6 +122,7 @@
         width: 80%;
         text-align: center;
         margin: auto;
+        padding-bottom: 70px; // évite que le texte passe sous la barre de menu
     }
     .presentationPage {
       height: calc(100% - 50px);

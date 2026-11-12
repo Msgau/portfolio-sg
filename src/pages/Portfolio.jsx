@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../styles/Portfolio.css";
 import Menu from "../components/Menu";
 import Screenblocks from "../assets/images/screenblocks.webp";
@@ -13,12 +13,44 @@ import gaec from "../assets/images/gaec.webp";
 import adp from "../assets/images/adp.webp";
 import ph from "../assets/images/ph.webp";
 
+const images = [
+  { img1: Screenblocks, img2: Screenblocks2 },
+  { img1: MVG, img2: MVG2 },
+  { img1: Nina, img2: Nina2 },
+  { img1: gaec, img2: adp, img3: ph },
+];
+
+// Délai maximal d'attente des images avant d'afficher la page quand même (ms)
+const MAX_LOADING_TIME = 4000;
+
 export default function Portfolio() {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState("");
   const [selectedImage2, setSelectedImage2] = useState("");
   const [selectedImage3, setSelectedImage3] = useState("");
   const [selectedProjectData, setSelectedProjectData] = useState({});
+  const [loading, setLoading] = useState(true);
+
+  // Affiche un petit loader jusqu'au chargement des images de couverture,
+  // pour éviter une grille vide ou mal dimensionnée au premier affichage
+  useEffect(() => {
+    let cancelled = false;
+    const covers = images.map(({ img1 }) => img1);
+    const loadImage = (src) =>
+      new Promise((resolve) => {
+        const img = new Image();
+        img.onload = img.onerror = resolve;
+        img.src = src;
+      });
+    const timeout = new Promise((resolve) => setTimeout(resolve, MAX_LOADING_TIME));
+    Promise.race([Promise.all(covers.map(loadImage)), timeout]).then(() => {
+      if (!cancelled) setLoading(false);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   const openModal = (imageSrc, imageSrc2, imageSrc3, projectData) => {
     setSelectedImage(imageSrc);
     setSelectedImage2(imageSrc2);
@@ -35,17 +67,15 @@ export default function Portfolio() {
     setModalOpen(false);
   };
 
-  const images = [
-    { img1: Screenblocks, img2: Screenblocks2 },
-    { img1: MVG, img2: MVG2 },
-    { img1: Nina, img2: Nina2 },
-    { img1: gaec, img2: adp, img3: ph },
-  ];
-
   return (
     <div className="works">
       <Menu />
       <div className="backgroundImage"></div>
+      {loading ? (
+        <div className="loader-container" role="status" aria-label="Chargement des projets">
+          <div className="spinner" />
+        </div>
+      ) : (
       <div>
         <div className="portfolio">
           {projectData
@@ -89,6 +119,7 @@ export default function Portfolio() {
           projectData={selectedProjectData}
         />
       </div>
+      )}
     </div>
   );
 }

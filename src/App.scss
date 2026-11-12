@@ -12,3 +12,46 @@ body {
       color: white;
     }
   }
+// --- Transition entre pages (View Transitions API) ---
+// Le menu reste en place pendant que le contenu défile.
+.nav-bar {
+    view-transition-name: nav-bar;
+}
+
+::view-transition-group(nav-bar) {
+    animation: none;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation-duration: 0.6s;
+    animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+    animation-fill-mode: both;
+    mix-blend-mode: normal;
+}
+
+:root[data-nav-direction="down"]::view-transition-old(root) {
+    animation-name: page-out-up;
+}
+:root[data-nav-direction="down"]::view-transition-new(root) {
+    animation-name: page-in-from-bottom;
+}
+:root[data-nav-direction="up"]::view-transition-old(root) {
+    animation-name: page-out-down;
+}
+:root[data-nav-direction="up"]::view-transition-new(root) {
+    animation-name: page-in-from-top;
+}
+
+@keyframes page-out-up {
+    to { transform: translateY(-100%); }
+}
+@keyframes page-in-from-bottom {
+    from { transform: translateY(100%); }
+}
+@keyframes page-out-down {
+    to { transform: translateY(100%); }
+}
+@keyframes page-in-from-top {
+    from { transform: translateY(-100%); }
+}

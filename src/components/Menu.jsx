@@ -1,5 +1,6 @@
 import "../styles/Menu.scss";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { AnimatedLink, AnimatedNavLink } from "./AnimatedLinks";
 import logo1 from "../assets/sg.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -15,12 +16,12 @@ export default function Menu() {
 
   return (
     <div className="nav-bar">
-      <Link className="logo" to="/">
+      <AnimatedLink className="logo" to="/">
         <img src={logo1} alt="logo site" />
         <h2>Sébastien Gau</h2>
-      </Link>
+      </AnimatedLink>
       <nav>
-        <NavLink
+        <AnimatedNavLink
           to="/"
           className={({ isActive }) => (isActive ? "active" : "")}
           aria-label="Onglet Accueil"
@@ -32,8 +33,8 @@ export default function Menu() {
               location.pathname === "/" || location.pathname === "/" ? "#FF00FF" : "#9a9a9c",
             }}
           />
-        </NavLink>
-        <NavLink
+        </AnimatedNavLink>
+        <AnimatedNavLink
           to="/presentation"
           className={({ isActive }) =>
             `about-link${isActive ? " active" : ""}`
@@ -49,9 +50,9 @@ export default function Menu() {
                   : "#9a9a9c",
             }}
           />
-        </NavLink>
-        <NavLink
-          to="/works"
+        </AnimatedNavLink>
+        <AnimatedNavLink
+          to="/projets"
           className={({ isActive }) =>
             `works-link${isActive ? " active" : ""}`
           }
@@ -61,13 +62,13 @@ export default function Menu() {
             icon={faBriefcase}
             style={{
               color:
-                location.pathname === "/works"
+                location.pathname === "/projets"
                   ? "#FF00FF"
                   : "#9a9a9c",
             }}
           />
-        </NavLink>
-        <NavLink
+        </AnimatedNavLink>
+        <AnimatedNavLink
           
           to="/contact"
           className={({ isActive }) =>
@@ -84,7 +85,7 @@ export default function Menu() {
                   : "#9a9a9c",
             }}
           />
-        </NavLink>
+        </AnimatedNavLink>
       </nav>
       <ul>
         <li>

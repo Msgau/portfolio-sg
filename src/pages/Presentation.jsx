@@ -20,7 +20,7 @@ export default function Presentation() {
       <div className="presentationContainer">
         <h2>Présentation</h2>
         <p>
-          <strong>Développeur web</strong> chez Dignamik depuis 1 an, passionné par les
+          <strong>Développeur web</strong> chez Dignamik depuis bientôt 3 ans, passionné par les
           nouvelles technologies, je suis animé par une soif d'apprendre et de
           relever de nouveaux défis. Ancien professeur, j'ai acquis des
           compétences pédagogiques qui me permettent de transmettre efficacement
@@ -29,10 +29,17 @@ export default function Presentation() {
         <p>
           A travers mon expérience professionnelle et ma formation de développeur web chez <a href="https://openclassrooms.com/fr/paths/717-developpeur-web" rel="noopener noreferrer" target="_blank">Openclassrooms</a>,
           j'ai acquis des connaissances avancées en développement front-end (
-          <strong>JavaScript</strong>, <strong>HTML5</strong>, <strong>React</strong>,{" "}
-          <strong>CSS3</strong>) et back-end (<strong>Node.js</strong>,{" "}
-          <strong>express</strong>, <strong>mongoDB</strong>, <strong>postgreSQL</strong>, <strong>prisma Studio</strong>) me permettant de
-          créer des expériences web innovantes et fluides.{" "}
+          <strong>JavaScript</strong>, <strong>TypeScript</strong>, <strong>HTML5</strong>,{" "}
+          <strong>CSS3</strong>, <strong>React</strong>, <strong>Next.js</strong>) et back-end (<strong>Node.js</strong>,{" "}
+          <strong>express</strong>, <strong>mongoDB</strong>, <strong>postgreSQL</strong>, <strong>Supabase</strong>) me permettant de
+          créer des expériences web innovantes et fluides.
+        </p>
+        <p>
+          En 2026, je développe sur mon temps libre{" "}
+          <a href="https://www.screenblocks.fr/" rel="noopener noreferrer" target="_blank">Screenblocks</a>,
+          un site communautaire autour du cinéma et des séries. Ce projet personnel, construit avec{" "}
+          <strong>Next.js</strong>, <strong>TypeScript</strong> et <strong>Supabase</strong>,
+          m'a permis de concevoir une application complète, que je peux utiliser quotidiennement avec des amis et d'autres utilisateurs
         </p>
         <p>
           Vous pouvez retrouver davantage d'informations sur <a href={CV} target="_blank" rel="noopener noreferrer">mon CV</a>, ou sur ma page{" "}

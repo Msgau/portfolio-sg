@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sébastien Gau</title>
+    <!--
+      GitHub Pages ne sait pas servir les routes du site (/portfolio-sg/projets).
+      Cette page 404 renvoie vers index.html en passant le chemin dans la query
+      string ; le script d'index.html le remet ensuite dans l'URL.
+      (technique "spa-github-pages", 1 segment conservé : /portfolio-sg)
+    -->
+    <script>
+      var segmentCount = 1;
+      var l = window.location;
+      l.replace(
+        l.protocol + "//" + l.hostname + (l.port ? ":" + l.port : "") +
+        l.pathname.split("/").slice(0, 1 + segmentCount).join("/") + "/?/" +
+        l.pathname.slice(1).split("/").slice(segmentCount).join("/").replace(/&/g, "~and~") +
+        (l.search ? "&" + l.search.slice(1).replace(/&/g, "~and~") : "") +
+        l.hash
+      );
+    </script>
+  </head>
+  <body></body>
+</html>
